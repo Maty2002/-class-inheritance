@@ -16,10 +16,10 @@ class osoba
 		char znak;
 		
 		ifstream plik1;
-    	ofstream plik2;
+    		ofstream plik2;
 		
 		osoba();
-        ~osoba();
+        	~osoba();
 		
 		void wprowadzKonsola();
 		void wypiszKonsola();
@@ -28,7 +28,7 @@ class osoba
 };
 
 osoba::osoba(){
-	plik1.open("c:\\palindromy.txt");
+    plik1.open("c:\\palindromy.txt");
     plik2.open("c:\\wynikJSON.txt");
 };
 
@@ -51,14 +51,14 @@ void osoba::wprowadzPlik(){
 	        plik1>>znak>>napis;
 			
 			if(i==0) imie=znak+napis;		
-			if(i==1) nazwisko=znak+napis;		
+			if(i==1) nazwisko=znak+napis;		//ograniczenie się tylko do 3 "rekordów"
 			if(i==2) helped=znak+napis;
 			
-			pesel=atoi(helped.c_str());
+			pesel=atoi(helped.c_str());		//konwert stringa na inta
 			 
 			i++;
 		 }else{
-		 	break;
+		 	break;					//przerwanie
 		 }
 	}
 };
@@ -70,7 +70,7 @@ void osoba::wypiszPlik(){
 class uczen:public osoba
 {
 	string klasa;
-	string srednia_ocen;
+	string srednia_ocen;				
 	
 	public:
 		void wprowadz_ucznia_Konsola();
